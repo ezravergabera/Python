@@ -1,7 +1,7 @@
 import pyautogui as py
 import time as t
 
-times = 10 # number of pins
+times = 4 # number of pins
 
 t.sleep(1)
 

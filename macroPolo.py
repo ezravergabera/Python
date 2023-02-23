@@ -39,7 +39,7 @@ def spacing(times):
 
 t.sleep(1)
 
-user_input = 15 # change this according to the total number of lines in notepad
+user_input = 10 # change this according to the total number of lines in notepad
 
 number_of_lines = int((user_input + 1) / 2)
 times = number_of_lines - 1
