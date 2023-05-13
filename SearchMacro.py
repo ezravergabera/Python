@@ -2,7 +2,7 @@ import pyautogui as py
 import random
 import time as t
 
-times = 30
+times = 33
 
 t.sleep(1)
 
