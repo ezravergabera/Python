@@ -1,4 +1,5 @@
 import pyautogui as py
+import keyboard as key
 import random
 import time as t
 
@@ -7,6 +8,8 @@ times = 33
 t.sleep(1)
 
 for i in range(1, times + 1):
+    if(key.is_pressed("q")):
+        break
     search = ""
     number_of_letter = random.randint(5, 10)
     for j in range(1, number_of_letter + 1):
