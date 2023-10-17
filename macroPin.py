@@ -1,7 +1,7 @@
 import pyautogui as py
 import time as t
 
-times = 4 # number of pins
+times = int(input("Enter the number of pins: ")) # number of pins
 
 t.sleep(1)
 
