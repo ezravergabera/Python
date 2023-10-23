@@ -11,3 +11,6 @@ ecommerce
 *.pyc
 *.png
 *.code-workspace
+build/
+dist/
+*.spec
