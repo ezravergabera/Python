@@ -3,7 +3,7 @@ import time as t
 
 times = int(input("Enter the number of pins: ")) # number of pins
 
-t.sleep(1)
+t.sleep(3)
 
 for i in range(1, times + 1):
     message = "PIN "
@@ -11,3 +11,5 @@ for i in range(1, times + 1):
     py.press("down")
     with py.hold("ctrl"):
         py.press("left")
+
+input("Press any key to exit...")
