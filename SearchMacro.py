@@ -5,7 +5,7 @@ import time as t
 
 times = 33
 
-t.sleep(1)
+t.sleep(3)
 
 for i in range(1, times + 1):
     if(key.is_pressed("q")):
