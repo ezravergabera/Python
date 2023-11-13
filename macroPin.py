@@ -1,5 +1,6 @@
 import pyautogui as py
 import time as t
+import msvcrt as m
 
 times = int(input("Enter the number of pins: ")) # number of pins
 
@@ -12,4 +13,5 @@ for i in range(1, times + 1):
     with py.hold("ctrl"):
         py.press("left")
 
-input("Press any key to exit...")
+print("Press any key to exit...")
+m.getch()
