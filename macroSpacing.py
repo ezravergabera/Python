@@ -2,8 +2,9 @@
 import pyautogui as py
 import time as t
 import math
+import msvcrt as m
 
-times = 4  # number of pins
+times = input('enter the number of pins: ')  # number of pins
 
 t.sleep(1)
 
@@ -17,3 +18,6 @@ for i in range(1, math.ceil(times/5)):
     with py.hold("ctrl"):
         py.press("right")
         py.press("right")  # do this once if PIN is not included
+
+print('Press any key to exit...')
+m.getch()
