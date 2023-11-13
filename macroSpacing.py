@@ -4,7 +4,8 @@ import time as t
 import math
 import msvcrt as m
 
-times = input('enter the number of pins: ')  # number of pins
+print("aim at last of first line")
+times = int(input('enter the number of pins: '))  # number of pins
 
 t.sleep(1)
 
