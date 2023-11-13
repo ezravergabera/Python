@@ -2,11 +2,14 @@ import pyautogui as py
 import keyboard as key
 import random
 import time as t
+import msvcrt as m
 
 times = 33
 
-t.sleep(3)
+print("Press any key to continue...")
+t.sleep(1)
 
+print("Press q to stop.")
 for i in range(1, times + 1):
     if(key.is_pressed("q")):
         break
@@ -21,3 +24,6 @@ for i in range(1, times + 1):
     with py.hold("ctrl"):
         py.press("e")
     py.press("backspace")
+
+print("Press any key to exit...")
+m.getch()
