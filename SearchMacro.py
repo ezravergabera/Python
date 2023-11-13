@@ -7,6 +7,7 @@ import msvcrt as m
 times = 33
 
 print("Press any key to continue...")
+m.getch()
 t.sleep(1)
 
 print("Press q to stop.")
