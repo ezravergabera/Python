@@ -20,4 +20,6 @@ nums = [3, 4, 5, 6, 7]
 
 cubed = my_map(lambda x: x**3, nums)
 
-print(cubed)
+squared = my_map(lambda x: x**2, nums)
+
+print(cubed, squared)
