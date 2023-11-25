@@ -14,3 +14,4 @@ ecommerce
 build/
 dist/
 *.spec
+*.txt
