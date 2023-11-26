@@ -50,7 +50,7 @@ def get_iterative_factorial(n):
     else:
         factorial = 1
         for x in range (1, n+1):
-            factorial = factorial * n
+            factorial = factorial * x
         return factorial
 
 start = ic(t.perf_counter())
