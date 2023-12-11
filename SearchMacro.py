@@ -12,7 +12,7 @@ t.sleep(1)
 
 print("Press q to stop.")
 for i in range(1, times + 1):
-    t.sleep(0.25)
+    t.sleep(10)
     if(key.is_pressed("q")):
         break
     search = ""
