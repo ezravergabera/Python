@@ -4,7 +4,6 @@ import random
 import time as t
 import msvcrt as m
 import json
-from icecream import ic
 
 def generate_random(num):
     word = ""
@@ -25,16 +24,16 @@ def in_db(word):
     with open("db.txt", "w") as f:
         if db_set == None:
             db_set = [word]
-            f.write(ic(json.dumps(list(db_set))))
+            f.write(json.dumps(list(db_set)))
             return False
         elif word not in db_set:
             db_set.append(word)
-            f.write(ic(json.dumps(list(db_set))))
+            f.write(json.dumps(list(db_set)))
             return False
         else:
             return True
 
-times = 2
+times = 28
 
 print("Press any key to continue...")
 m.getch()
