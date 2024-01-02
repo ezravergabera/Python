@@ -55,5 +55,8 @@ for i in range(1, times + 1):
         py.press("e")
     py.press("backspace")
 
+with py.hold("alt"):
+    py.press("tab")
+
 print("Press any key to exit...")
 m.getch()
