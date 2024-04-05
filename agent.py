@@ -11,7 +11,7 @@ def agent(percept):
 
 def simulate_environment():
     while True:
-        percept = input("What is the status of the plate (clean or dirty): ")
+        percept = input("What is the status of the plate (clean or dirty): ").lower()
         if percept not in PERCEPTS:
             print("Invalid input.")
             continue

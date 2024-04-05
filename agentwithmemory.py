@@ -1,60 +1,78 @@
 PERCEPTS = ['antipolo', 'cubao', 'pup']
-ACTIONS = ['do nothing', 'go to antipolo', 'go to cubao', 'go to pup']
 RULES = {
-    0: 'do nothing',
-    1: 'go to antipolo',
-    2: 'go to cubao',
-    3: 'go to pup'
+    0: 'Do nothing',
+    1: 'Going to Antipolo',
+    2: 'Going to Cubao',
+    3: 'Going to PUP'
 }
 
 def agent_with_memory(percept):
     global state
 
-    if state is None:
-        state = 1
-        if percept == 'antipolo' and state != 1:
+    match state:
+        case None:
             state = 1
-            action = 1
-        elif percept == 'antipolo' and state == 1:
-            state = 1
-            action = 0
-        elif percept == 'cubao' and state != 2:
-            state = 2
-            action = 2
-        elif percept == 'cubao' and state == 2:
-            state = 2
-            action = 0
-        elif percept == 'pup' and state != 3:
-            state = 3
-            action = 3
-        elif percept == 'pup' and state == 3:
-            state = 3
-            action = 0
-        else:
-            action = 0
-    else:
-        if percept == 'antipolo' and state != 1:
-            state = 1
-            action = 1
-        elif percept == 'antipolo' and state == 1:
-            state = 1
-            action = 0
-        elif percept == 'cubao' and state != 2:
-            state = 2
-            action = 2
-        elif percept == 'cubao' and state == 2:
-            state = 2
-            action = 0
-        elif percept == 'pup' and state != 3:
-            state = 3
-            action = 3
-        elif percept == 'pup' and state == 3:
-            state = 3
-            action = 0
-        else:
-            action = 0
+            match percept:
+                case 'antipolo':
+                    print("Currently, You are in Antipolo")
+                    action = 0
+                case 'cubao':
+                    print("Currently, You Are in Antipolo")
+                    state = 2
+                    action = 2
+                case 'pup':
+                    print("Currently, You are in Antipolo")
+                    state = 3
+                    action = 3
+                case _:
+                    print("Invalid location.")
+        case 1:
+            match percept:
+                case 'antipolo':
+                    print("Currently, You are in Antipolo")
+                    action = 0
+                case 'cubao':
+                    print("Currently, You Are in Antipolo")
+                    state = 2
+                    action = 2
+                case 'pup':
+                    print("Currently, You are in Antipolo")
+                    state = 3
+                    action = 3
+                case _:
+                    print("Invalid location.")
+        case 2:
+            match percept:
+                case 'antipolo':
+                    print("Currently, You are in Cubao")
+                    state = 1
+                    action = 1
+                case 'cubao':
+                    print("Currently, You Are in Cubao")
+                    action = 0
+                case 'pup':
+                    print("Currently, You are in Cubao")
+                    state = 3
+                    action = 3
+                case _:
+                    print("Invalid location.")
+        case 3:
+            match percept:
+                case 'antipolo':
+                    print("Currently, You are in PUP")
+                    state = 1
+                    action = 1
+                case 'cubao':
+                    print("Currently, You Are in PUP")
+                    state = 2
+                    action = 2
+                case 'pup':
+                    print("Currently, You are in PUP")
+                    action = 0
+                case _:
+                    print("Invalid location.")
 
-    return ACTIONS[action]
+    return RULES[action]
 
 def simulate_environment():
     global state
@@ -67,6 +85,6 @@ def simulate_environment():
             continue
 
         action = agent_with_memory(percept)
-        print(f"Percept: {percept}, Action: {action}")
+        print(f"Action Taken: {action}")
 
 simulate_environment()
