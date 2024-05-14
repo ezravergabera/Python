@@ -38,10 +38,10 @@ def generate_rand():
         parent.append(temp_gene)
     if parent not in parents:
         parents.append(parent)
+        print(parent)
+        return parent
     else:
         generate_rand()
-    print(parent)
-    return parent
 
 def distance(parent):
     total_distance = 0
