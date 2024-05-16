@@ -57,7 +57,7 @@ def fitness(parent):
 
     print(f"Total distance: {total_distance}")
 
-    fitness_score[parent] = total_distance
+    fitness_score[tuple(parent)] = total_distance
     return fitness_score
 
 def selection(fitness_scores, parent1=None, parent2=None):
@@ -67,15 +67,15 @@ def selection(fitness_scores, parent1=None, parent2=None):
         best_parent2 = parent2
 
     # isa or wala, return none
-    if len(fitness_score) < 2:
+    if len(fitness_scores) < 2:
         return None, None
 
     # pag dalawa lang yung parent, return agad
-    if len(fitness_score) == 2:
+    if len(fitness_scores) == 2:
         return min(fitness_scores.items(), key=lambda x: x[1]), max(fitness_scores.items(), key=lambda x: x[1])
 
     # pag 10 items and below, piliin yung dalawang parent na may mataas na score
-    if len(fitness_score) <= 10: 
+    if len(fitness_scores) <= 10: 
         for i, parent, fitness_score in enumerate(fitness_scores):
             if i == 0 and best_parent1 is None:
                 best_parent1 = parent
@@ -98,7 +98,7 @@ def selection(fitness_scores, parent1=None, parent2=None):
         return best_parent1, best_parent2
     # pag more than 10, kuha ng tournament size(10) from the population(fitness_scores) tas tsaka mag survival of the fittest
     else:
-        tournament_size = random.sample(fitness_score.items(), 10)
+        tournament_size = random.sample(fitness_scores.items(), 10)
         for i, parent, fitness_score in enumerate(tournament_size):
             if i == 0 and best_parent1 is None:
                 best_parent1 = parent
